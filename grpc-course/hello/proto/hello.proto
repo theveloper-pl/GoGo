@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package hello;
+
+option go_package = "github.com/theveloper-pl/grpc-course/hello/proto";
+
+message HelloRequest {
+    string first_name = 1;
+}
+
+message HelloResponse {
+    string result = 1;
+}
+
+service HelloService {
+    rpc Hello (stream HelloRequest) returns (stream HelloResponse);
+}
+
+
+

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package max;
+
+option go_package = "github.com/theveloper-pl/grpc-course/max/proto";
+
+message MaxRequest {
+    int64 number = 1;
+}
+
+message MaxResponse {
+    int64 number = 1;
+}
+
+service MaxService {
+    rpc Max (stream MaxRequest) returns (stream MaxResponse);
+}
+
+
+

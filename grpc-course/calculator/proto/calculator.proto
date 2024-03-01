@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package notify;
+
+option go_package = "github.com/theveloper-pl/grpc-course/calculator/proto";
+
+message CalculatorRequest {
+    int64 number = 1;
+}
+
+message CalculatorResponse {
+    int64 result = 1;
+}
+
+service CalculatorService {
+    rpc CalculateManyTimes (CalculatorRequest) returns (stream CalculatorResponse);
+}

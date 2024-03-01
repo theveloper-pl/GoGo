@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package notify;
+
+option go_package = "github.com/theveloper-pl/grpc-course/notify/proto";
+
+message NotifyRequest {
+    uint32 id = 1;
+    string message = 2;
+}
+
+message NotifyResponse {
+    string result = 1;
+}
+
+service NotifyService {
+    rpc Notify (NotifyRequest) returns (NotifyResponse);
+}
+
+
+
